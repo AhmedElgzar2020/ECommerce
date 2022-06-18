@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ECommerce.Core.ViewModels
+{
+    public class BaseEntityVM
+    {
+        public string CreatedBy { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string ModefiedBy { get; set; }
+        public DateTime? ModefiedAt { get; set; }
+        public bool IsDeleted { get; set; }
+    }
+}

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ECommerce.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace ECommerce.Infrastructure
             : base(options)
         {
         }
+        public DbSet<Category> categories { get; set; }
+        public DbSet<Product> products { get; set; }
     }
 }
