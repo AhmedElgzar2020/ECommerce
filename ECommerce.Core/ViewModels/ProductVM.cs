@@ -15,5 +15,7 @@ namespace ECommerce.Core.ViewModels
         public string Description { get; set; }
         [Required]
         public string ImagePath { get; set; }
+        public int CategoryId { get; set; }
+        public CategoryVM categoryVM { get; set; }
     }
 }
