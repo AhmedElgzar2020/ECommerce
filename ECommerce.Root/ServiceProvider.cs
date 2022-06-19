@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using ECommerce.Application.Services;
+using ECommerce.Application.Mappers;
 
 namespace ECommerce.Root
 {
@@ -19,6 +21,9 @@ namespace ECommerce.Root
             services.AddDbContext<ECommerceDbContext>(opt => opt.UseSqlServer(dbConnectionString, b => b.MigrationsAssembly("ECommerce.Infrastructure")));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddScoped<IUnitOfWork, ECommerceUnitOfWork>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<CategoryMapper>();
+
 
             return services;
         }
