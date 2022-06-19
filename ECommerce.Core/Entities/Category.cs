@@ -12,6 +12,6 @@ namespace ECommerce.Core.Entities
         [Required]
         public string Name { get; set; }
         public int ParentId { get; set; }
-        public Category category { get; set; }
+        public ICollection<Category> categories { get; set; }
     }
 }
