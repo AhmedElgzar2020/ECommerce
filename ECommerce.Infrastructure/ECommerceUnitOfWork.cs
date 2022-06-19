@@ -10,9 +10,9 @@ namespace ECommerce.Infrastructure
 {
     public class ECommerceUnitOfWork : IUnitOfWork
     {
-        private readonly DbContext _context;
+        private readonly ECommerceDbContext _context;
 
-        public ECommerceUnitOfWork(DbContext context)
+        public ECommerceUnitOfWork(ECommerceDbContext context)
         {
             _context = context;
         }
