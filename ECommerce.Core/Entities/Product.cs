@@ -16,7 +16,7 @@ namespace ECommerce.Core.Entities
         [Required]
         public string ImagePath { get; set; }
         public int CategoryId { get; set; }
-        public Category category { get; set; }
+        public Category Category { get; set; }
 
     }
 }
