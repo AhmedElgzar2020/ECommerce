@@ -1,4 +1,6 @@
 ﻿using ECommerce.Core.Interfaces;
+using ECommerce.Core.Responses;
+using ECommerce.Core.ViewModels;
 using ECommerce.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -16,5 +18,9 @@ namespace ECommerce.Application.Services
             _unitOfWork = unitOfWork;
         }
 
+        public Response<List<CategoryVM>> Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
