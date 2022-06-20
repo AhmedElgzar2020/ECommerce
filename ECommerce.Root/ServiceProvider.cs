@@ -23,7 +23,7 @@ namespace ECommerce.Root
             services.AddScoped<IUnitOfWork, ECommerceUnitOfWork>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<CategoryMapper>();
-
+            services.AddScoped<ProductMapper>();
 
             return services;
         }

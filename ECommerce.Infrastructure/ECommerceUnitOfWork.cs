@@ -14,7 +14,7 @@ namespace ECommerce.Infrastructure
     {
         private readonly ECommerceDbContext _context;
         private IBaseRepository<Category> _CategoryRepository;
-
+        private IBaseRepository<Product> _ProductRepository;
         public ECommerceUnitOfWork(ECommerceDbContext context)
         {
             _context = context;
@@ -30,6 +30,18 @@ namespace ECommerce.Infrastructure
                 }
 
                 return _CategoryRepository;
+            }
+        }
+        public IBaseRepository<Product> ProductRepository
+        {
+            get
+            {
+                if (this._ProductRepository == null)
+                {
+                    this._ProductRepository = new BaseRepository<Product>(_context);
+                }
+
+                return _ProductRepository;
             }
         }
         public bool Commit()

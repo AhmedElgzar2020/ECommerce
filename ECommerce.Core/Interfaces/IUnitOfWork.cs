@@ -10,7 +10,7 @@ namespace ECommerce.Core.Interfaces
     public interface IUnitOfWork
     {
         IBaseRepository<Category> CategoryRepository { get; }
-
+        IBaseRepository<Product> ProductRepository { get; }
         bool Commit();
 
         Task<int> CommitAsync();
