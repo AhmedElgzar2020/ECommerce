@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using ECommerce.Application.Services;
 using ECommerce.Application.Mappers;
+using Microsoft.AspNetCore.Identity;
 
 namespace ECommerce.Root
 {
@@ -19,9 +20,11 @@ namespace ECommerce.Root
             var dbConnectionString = configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<ECommerceDbContext>(opt => opt.UseSqlServer(dbConnectionString, b => b.MigrationsAssembly("ECommerce.Infrastructure")));
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ECommerceDbContext>();
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddScoped<IUnitOfWork, ECommerceUnitOfWork>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            //services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<CategoryMapper>();
 
 

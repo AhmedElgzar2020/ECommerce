@@ -1,4 +1,6 @@
 ﻿using ECommerce.Core.Interfaces;
+using ECommerce.Core.Responses;
+using ECommerce.Core.ViewModels;
 using ECommerce.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -17,5 +19,9 @@ namespace ECommerce.Application.Services
 
         }
 
+        public Response<List<CategoryVM>> Get()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
