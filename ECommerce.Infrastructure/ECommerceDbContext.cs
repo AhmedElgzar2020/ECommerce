@@ -1,4 +1,5 @@
 ﻿using ECommerce.Core.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Infrastructure
 {
-    public class ECommerceDbContext: DbContext
+    public class ECommerceDbContext: IdentityDbContext
     {
         public ECommerceDbContext(DbContextOptions<ECommerceDbContext> options)
             : base(options)
         {
         }
-        public DbSet<Category> categories { get; set; }
-        public DbSet<Product> products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
