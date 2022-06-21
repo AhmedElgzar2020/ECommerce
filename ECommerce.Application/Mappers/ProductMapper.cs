@@ -28,7 +28,7 @@ namespace ECommerce.Application.Mappers
             return _mapper.Map<Product>(destinationEntity);
         }
 
-        public override ProductVM MapFromSourceToDestination(ProductVM sourceEntity)
+        public override ProductVM MapFromSourceToDestination(Product sourceEntity)
         {
             return _mapper.Map<ProductVM>(sourceEntity);
         }

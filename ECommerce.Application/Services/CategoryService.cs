@@ -16,7 +16,6 @@ namespace ECommerce.Application.Services
         public CategoryService(ECommerceUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-
         }
 
         public Response<List<CategoryVM>> Get()
