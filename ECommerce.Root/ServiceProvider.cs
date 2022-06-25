@@ -24,7 +24,8 @@ namespace ECommerce.Root
                 .AddEntityFrameworkStores<ECommerceDbContext>();
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddScoped<IUnitOfWork, ECommerceUnitOfWork>();
-            //services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<CategoryMapper>();
             services.AddScoped<ProductMapper>();
 
