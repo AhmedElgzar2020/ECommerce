@@ -13,8 +13,8 @@ namespace ECommerce.Core.ViewModels
         [Required]
         public string Name { get; set; }
         public int ProductId { get; set; }
-        public Category Parent { get; set; }
-        public ICollection<Category> ChildrenCategory { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public CategoryVM Parent { get; set; }
+        public ICollection<CategoryVM> ChildrenCategory { get; set; }
+        public ICollection<ProductVM> Products { get; set; }
     }
 }

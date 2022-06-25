@@ -32,7 +32,9 @@ namespace ECommerce.API
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        ); 
             Root.ServiceProvider.BuildServiceProvider(Configuration, services);
             services.AddSwaggerGen(c =>
             {

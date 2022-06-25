@@ -13,5 +13,25 @@ namespace ECommerce.API.Controllers
         {
             _categoryService = categoryService;
         }
+        [HttpGet("GetProducts")]
+        public IActionResult GetCategories()
+        {
+            var categories = _categoryService.Get();
+            return Ok(categories);
+        }
+
+        [HttpGet("GetCategory/{CategoryId}")]
+        public IActionResult GetCategory(int CategoryId)
+        {
+            var category = _categoryService.Get(CategoryId);
+            return Ok(category);
+        }
+
+        [HttpGet("GetCategoriesOfCategory/{CategoryId}")]
+        public IActionResult GetCategoriesOfCategory(int CategoryId)
+        {
+            var categories = _categoryService.Get(c=>c.ParentId==CategoryId);
+            return Ok(categories);
+        }
     }
 }
