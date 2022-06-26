@@ -15,6 +15,7 @@ namespace ECommerce.Core.Interfaces
         Response<List<CategoryVM>> Get();
         Response<List<CategoryVM>> Get(Expression<Func<Category, bool>> query);
         Response<CategoryVM>Get(int Id);
+        public bool CategoryExists(Expression<Func<Category, bool>> query);
 
     }
 }

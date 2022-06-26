@@ -16,5 +16,6 @@ namespace ECommerce.Core.ViewModels
         public CategoryVM Parent { get; set; }
         public ICollection<CategoryVM> ChildrenCategory { get; set; }
         public ICollection<ProductVM> Products { get; set; }
+        public bool IsExists { get; set; }
     }
 }

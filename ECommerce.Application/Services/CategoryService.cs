@@ -46,5 +46,12 @@ namespace ECommerce.Application.Services
                 _unitOfWork.CategoryRepository.FirstOrDefault())
             };
         }
+
+        public bool CategoryExists(Expression<Func<Category, bool>> query)
+        {
+            var IsExists = _unitOfWork.CategoryRepository.Any(query);
+            return   IsExists ;
+        }
+
     }
 }
